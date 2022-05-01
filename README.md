@@ -1,2 +1,2 @@
 # web-game
-project for course (cs346) web development
+project for course (cs438) Internet Technologies
