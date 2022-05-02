@@ -11,12 +11,12 @@ class boy {
     this.x = 50;
     this.y = height - this.r;
     this.by = 0;
-    this.gravity = 3;
+    this.gravity = 2;
   }
 
   jump() {
     if (this.y == height - this.r) {
-      this.by = -135; 
+      this.by = -32; 
       // حجم القفزه 
     }
   }

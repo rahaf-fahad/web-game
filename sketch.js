@@ -11,15 +11,22 @@ let shImg;
 let bImg;
 let Sharks = [];
 let soundClassifier;
+var Bscore=0;
+var K = null;
+var Gover = document.querySelector("#gameOver");
+let Sgame = new Audio ("sea waves.mp3");
+let SgameOver = new Audio ("game over.mp3");
+
+
 
 function preload() {
   const options = {
-    probabilityThreshold: 0.95
-  };
+    probabilityThreshold: 0.95};
   soundClassifier = ml5.soundClassifier('SpeechCommands18w', options);
   BImg = loadImage('BOY.png');
   shImg = loadImage('Shark.png');
-  bImg = loadImage('background.png');
+  bImg = loadImage('background.gif');
+
 }
 
 function mousePressed() {
@@ -27,7 +34,7 @@ function mousePressed() {
 }
 
 function setup() {
-  createCanvas(800, 450);
+  createCanvas(1536, 720);
   BOY = new boy();
   soundClassifier.classify(gotCommand);
 }
@@ -49,20 +56,29 @@ function keyPressed() {
 }
 
 function draw() {
+   Sgame.play();
   if (random(1) < 0.005) {
     Sharks.push(new Shark());
   }
 
   background(bImg);
+ 
+  Gover.style.display = "none";
   for (let sh of Sharks) {
     sh.move();
     sh.show();
-    if (BOY.hits(sh)) {
-      console.log('game over');
+    if( !BOY.hits(sh)){
+       Bscore++;}
+   if (BOY.hits(sh)) {
+      Sgame.pause();
+      SgameOver.play();
+      Gover.style.display="block";
+      clearInterval(K);
       noLoop();
     }
-  }
+text('YOUR SCORE: ' + Bscore, width - 800, height / 9);
+BOY.show();
+BOY.move();
 
-  BOY.show();
-  BOY.move();
+}
 }
