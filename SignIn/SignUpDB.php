@@ -49,7 +49,7 @@
   
     if(isset($_POST['signup']))
     {
-       if($response === "<span style='color: green; font-size:smalle;'>Available</span>" && $response1 === "<span style='color: green; font-size:smaller;'>Available</span>"){
+       if($response === "<span style='color: green; font-size:smaller;'>Available</span>" && $response1 === "<span style='color: green; font-size:smaller;'>Available</span>"){
        $username = $_POST['txt'];
        $email = $_POST['email'];
        $password = md5($_POST['password']); 
