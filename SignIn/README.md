@@ -99,6 +99,7 @@ $sql = "SELECT Username, password FROM players WHERE Username = '$uname' and pas
 ```
 <br>
 After matching the user name and password with the use of the database query, the player is transferred to the game page, including the username of the player by sending the username with the URL to the following page, as shown in the following figure <br>
+
 ![Inkedusername](https://user-images.githubusercontent.com/52053143/167228780-388765ac-f92b-4e56-ba04-2bf0c2a38d33.jpg)
 
 <br>
