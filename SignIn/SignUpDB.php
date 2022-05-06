@@ -60,7 +60,7 @@
    
        if (mysqli_query($connection, $sql)) {
            echo "The data sent successfuly" . "<br>";
-           header("Location: http://localhost/P5/index.html");
+           header("Location: http://localhost/Project438/index.html");
            exit();
            } else {
            echo "Error: " . $sql . "<br>" . mysqli_error($connection) . "<br>";
@@ -68,7 +68,7 @@
    
         }
         else{
-            header("Location: http://localhost/P5/htmlSignIn.php");
+            header("Location: http://localhost/Project438/htmlSignIn.php");
         }
         }
 
