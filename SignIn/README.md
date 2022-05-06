@@ -97,7 +97,21 @@ $sql = "SELECT Username, password FROM players WHERE Username = '$uname' and pas
                         }
 
 ```
-
+<br>
 After matching the user name and password with the use of the database query, the player is transferred to the game page, including the username of the player by sending the username with the URL to the following page, as shown in the following figure <br>
 ![Inkedusername](https://user-images.githubusercontent.com/52053143/167228780-388765ac-f92b-4e56-ba04-2bf0c2a38d33.jpg)
 
+<br>
+When the username or password is not matched, the error statement is sent via the URL to the registration page and shown in the error box that was built into the HTML page.
+<br>
+
+```
+
+ }else{           
+                   header("Location:htmlSignIn.php?error=Incorect User name or password!");
+                   }
+```
+
+<br>
+
+<img width="413" alt="errore" src="https://user-images.githubusercontent.com/52053143/167229069-ae511768-4694-4a30-82b9-b798ecadf5da.png">
