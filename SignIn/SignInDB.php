@@ -24,9 +24,7 @@
             $uname = validate($_POST['txt']);
         
             $pass = validate(md5($_POST['password']));
-        
-        
-        
+
                 $sql = "SELECT Username, password FROM players WHERE Username = '$uname' and password ='$pass'  ";
                 $result = mysqli_query($connection, $sql);
         
@@ -43,37 +41,28 @@
                         $_SESSION['Email'] = $row['Email'];
         
                         $_SESSION['ID'] = $row['ID'];
-        
-                        header("Location: index.html");
+                        
+                        header("Location: index.php?username=$uname");
         
                         exit();
         
                     }else{
         
                         header("Location:htmlSignIn.php?error=Incorect Username or password");
-        
                     }
-        
-                }else{
-                          
-                       
+                }else{           
                    header("Location:htmlSignIn.php?error=Incorect User name or password!");
-        
-                    
-        
                 }
         
             }
         
         }else{
-        
+            
             header("Location: htmlSignIn.php");
         
             exit();
         
         }
-        
-        
+  
 }
-
     ?> 
