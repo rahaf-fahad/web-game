@@ -38,13 +38,44 @@ figure1: login and signup page. <br>
 ```
 
 <br><br><hr>
-The player creates an account for himself by registering a username, email and password, the figure 1
+### Creat acount
+The player creates an account for himself by registering a username, email and password, the figure 2
 
 <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img width="350" alt="4" alt="signup" src="https://user-images.githubusercontent.com/52053143/166150983-d581044c-3ff3-4ff3-bd64-0ed5614fea65.png" ></div>
-<div style="text align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure1: Signup page</div>
+<div style="text align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure2: Signup page</div>
 <br>
 The availability of the username and email are checked because each player must have a special username and email and it is not possible to register with them again.
 
 
 
-[SignUpDB.php](https://github.com/RanaMHM/ProjectCS438/blob/main/SignUpDB.php)
+* The file [SignUpDB.php](https://github.com/RanaMHM/ProjectCS438/blob/main/SignUpDB.php) contains PHP codes that receive the incoming data through AJAX and verify the database after verifying that the username and mail are not taken from other players, a query is made to add a new user to the database. Taken The page will be reloaded again to enter a username and email that was not taken
+
+
+```
+ if(isset($_POST['email'])){       
+        $email = mysqli_real_escape_string($connection,$_POST['email']);
+        $query = "SELECT `Email` FROM `players` WHERE `Email` = '$email'";     
+        $result = mysqli_query($connection,$query);   
+        $response1 = "<span style='color: green; font-size:smaller;'>Available</span>";
+        if(mysqli_num_rows($result)){
+           $row = mysqli_fetch_array($result);          
+           $count = $row['Email'];
+           if($count > 0 ){
+            $response1 = "<span style='color: red; font-size:smaller;'>Not Available.</span>";
+        }
+        }
+        echo $response1;
+       // die;
+    }
+
+
+```
+The code shows receiving the data (email) sent through JavaScript and verifying that it was not taken, then sending the speech that will appear to the user as available or unavailable on the login page.
+
+<img width="411" alt="SignupAva" src="https://user-images.githubusercontent.com/52053143/167227230-c6464964-733b-4c87-9560-ef2de65b30de.png">
+
+<br><hr>
+
+### Sign in
+<br>
+The username and password are entered on the login page, which is built in the [htmlSignIn.php](https://github.com/RanaMHM/ProjectCS438/blob/main/htmlSignIn.php)  file in the entry box for each of them, and then the login button is pressed. The data will be sent to the [SignInDB.php](https://github.com/rahaf-fahad/web-game/blob/main/SignIn/SignInDB.php) file to verify that the user name and password match the data in the database for the same user.
