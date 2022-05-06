@@ -78,4 +78,4 @@ The code shows receiving the data (email) sent through JavaScript and verifying 
 
 ### Sign in
 <br>
-The username and password are entered on the login page, which is built in the [htmlSignIn.php](https://github.com/RanaMHM/ProjectCS438/blob/main/htmlSignIn.php)  file in the entry box for each of them, and then the login button is pressed. The data will be sent to the [SignInDB.php](https://github.com/rahaf-fahad/web-game/blob/main/SignIn/SignInDB.php) file to verify that the user name and password match the data in the database for the same user.
+The username and password are entered on the login page, which is built in the [htmlSignIn.php](https://github.com/RanaMHM/web-game/blob/main/SignIn/htmlSignIn.php) [htmlSignIn.php](https://github.com/RanaMHM/web-game/blob/main/SignIn/htmlSignIn.php) file in the entry box for each of them, and then the login button is pressed. The data will be sent to the [SignInDB.php](https://github.com/RanaMHM/web-game/blob/main/SignIn/SignInDB.php) file to verify that the user name and password match the data in the database for the same user.
