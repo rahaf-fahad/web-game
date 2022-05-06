@@ -81,3 +81,23 @@ The code shows receiving the data (email) sent through JavaScript and verifying 
 
 
 The username and password are entered on the login page, which is built in the [htmlSignIn.php](https://github.com/RanaMHM/web-game/blob/main/SignIn/htmlSignIn.php) file in the entry box for each of them, and then the login button is pressed. The data will be sent to the [SignInDB.php](https://github.com/RanaMHM/web-game/blob/main/SignIn/SignInDB.php) file to verify that the user name and password match the data in the database for the same user.
+
+```
+$sql = "SELECT Username, password FROM players WHERE Username = '$uname' and password ='$pass'  ";
+                $result = mysqli_query($connection, $sql);
+                if (mysqli_num_rows($result) === 1) {
+                    $row = mysqli_fetch_assoc($result);
+        
+                    if ($row['Username'] === $uname && $row['password'] === $pass) {
+                        echo "Logged in!"    
+                        header("Location: index.php?username=$uname");
+                        exit();
+                        }
+                        ....
+                        }
+
+```
+
+After matching the user name and password with the use of the database query, the player is transferred to the game page, including the username of the player by sending the username with the URL to the following page, as shown in the following figure <br>
+![Inkedusername](https://user-images.githubusercontent.com/52053143/167228780-388765ac-f92b-4e56-ba04-2bf0c2a38d33.jpg)
+
