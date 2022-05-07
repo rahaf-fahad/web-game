@@ -1,8 +1,11 @@
 # web-game
 project for course (cs346) web development
 * **User authentication( create a user account and then user can login the game )**<br>
-The method of creating a new account and logging in to the player has been explained here : [SignIn](https://github.com/rahaf-fahad/web-game/tree/main/SignIn)
+The method of creating a new account and logging in to the player has been explained here : [SignIn](https://github.com/rahaf-fahad/web-game/tree/main/SignIn) <br>
+
 * **Save the score of the user to the database** <br>
+<br>
+
 * **Show the heights score of all players at the end  of each game.** <br>
 <hr>
 
@@ -17,12 +20,13 @@ The method of creating a new account and logging in to the player has been expla
    
    ## Save the score of the player to the database
    
-   When the game starts, the score will start to increase until the child hits the shark
+   When the game starts, the score will start to increase until the child hits the shark     <br>
    
-    <br>
-   
- ```
+
     
+   
+
+ ```
     for (let sh of Sharks) {
        sh.move();
        sh.show();
@@ -49,7 +53,7 @@ The method of creating a new account and logging in to the player has been expla
       BOY.move();
      }
     }
- ```
+```
  
  <br>
 
