@@ -101,3 +101,37 @@ The method of creating a new account and logging in to the player has been expla
 
 https://user-images.githubusercontent.com/52053143/167234141-2af7b30d-1377-4c6d-a68f-95264b014bab.mp4
 
+<br>
+# Code to show usernames with their score and a query from the database in the order of the score in descending order and formatted in the table with html 
+<br>
+
+ ```
+<div class="highestScore" id="output">     
+       <table>
+         <tr> 
+           <td colspan="2"> <h2> Highest score:</h2></td>
+         </tr>
+         <?php  
+              ...
+                    $query="SELECT `Username`, `Scores` FROM `players` ORDER BY `Scores` DESC "; 
+                    $result= mysqli_query($connection , $query);   
+                   if (mysqli_num_rows($result) > 0) {
+                     $sn=1;
+                     while($rows=mysqli_fetch_assoc($result)) {
+                    ?>
+                   <tr>                
+                    <td><?php echo $rows['Username']; ?></td>
+                    <td  style="text-align:center;"><?php echo $rows['Scores']; ?></td>
+                  </tr>
+                  <?php $sn++;}} else { ?>
+                  <tr>
+      <td colspan="2">No data found</td>
+     </tr>
+           <?php }}  ?>
+           </table>     
+  </div>
+  <button onclick="history.back()">Play again</button>
+  ...
+  
+  
+ ```
