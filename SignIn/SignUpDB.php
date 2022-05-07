@@ -60,7 +60,7 @@
    
        if (mysqli_query($connection, $sql)) {
            echo "The data sent successfuly" . "<br>";
-           header("Location: http://localhost/Project438/index.html");
+           header("Location: http://localhost/Project438/index.php");
            exit();
            } else {
            echo "Error: " . $sql . "<br>" . mysqli_error($connection) . "<br>";
