@@ -10,19 +10,12 @@
         if (isset($_POST['txt']) && isset($_POST['password'])) {
         
             function validate($data){
-        
                $data = trim($data);
-        
                $data = stripslashes($data);
-        
                $data = htmlspecialchars($data);
-        
                return $data;
-        
             }
-        
             $uname = validate($_POST['txt']);
-        
             $pass = validate(md5($_POST['password']));
 
                 $sql = "SELECT Username, password FROM players WHERE Username = '$uname' and password ='$pass'  ";
@@ -35,12 +28,6 @@
                     if ($row['Username'] === $uname && $row['password'] === $pass) {
         
                         echo "Logged in!";
-        
-                        $_SESSION['Username'] = $row['Username'];
-        
-                        $_SESSION['Email'] = $row['Email'];
-        
-                        $_SESSION['ID'] = $row['ID'];
                         
                         header("Location: index.php?username=$uname");
         
