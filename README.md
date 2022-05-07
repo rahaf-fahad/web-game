@@ -6,20 +6,20 @@ The method of creating a new account and logging in to the player has been expla
 * **Show the heights score of all players at the end  of each game.** <br>
 <hr>
 
-<br>
+<br><br>
 <h4>After being logged in, the game starts by pressing any button</h4>
 <h4>The boy surfing appears and he must avoid the sharks</h4>'
 <br>
 
    https://user-images.githubusercontent.com/52053143/167233115-88de026b-4062-4e7a-a9bc-24605594e67d.mp4  
    
-   <br>
+   <br> <br>
    
    ## Save the score of the player to the database
    
    When the game starts, the score will start to increase until the child hits the shark
    
-   
+    <br>
    
  ```
     
@@ -51,12 +51,12 @@ The method of creating a new account and logging in to the player has been expla
     }
  ```
  
-
+ <br>
 
   
   The previous code shows that when the child hits the shark, the game will stop and the scoers will be sent to [index.php](https://github.com/rahaf-fahad/web-game/blob/main/Project438/index.php), with a submit for the form by sending the username and the scores of the game to the file [ScoreDB.php](https://github.com/rahaf-fahad/web-game/blob/main/Project438/ScoreDB.php) 
 
-
+ <br>
  
  ```
  // Was the score sent from javascript to index.php
@@ -86,10 +86,17 @@ The method of creating a new account and logging in to the player has been expla
  }
  
  ```
+ 
+  <br>
+
+
  ## Show the heights score of all players at the end  of each game.
  
+  <br>
+  
  After completing the comparison and saving the new [score.php](https://github.com/rahaf-fahad/web-game/blob/main/Project438/score.php), the page will direct us to the score page, in which the scores of all players will be displayed in order from highest to lowest with a button to choose to play again <br>
  
+ <br> 
  
 
 https://user-images.githubusercontent.com/52053143/167234141-2af7b30d-1377-4c6d-a68f-95264b014bab.mp4
