@@ -4,3 +4,93 @@ project for course (cs346) web development
 The method of creating a new account and logging in to the player has been explained here : [SignIn](https://github.com/rahaf-fahad/web-game/tree/main/SignIn)
 * **Save the score of the user to the database** <br>
 * **Show the heights score of all players at the end  of each game.** <br>
+<hr>
+
+<br>
+<h4>After being logged in, the game starts by pressing any button</h4>
+<h4>The boy surfing appears and he must avoid the sharks</h4>'
+<br>
+
+   https://user-images.githubusercontent.com/52053143/167233115-88de026b-4062-4e7a-a9bc-24605594e67d.mp4  
+   
+   <br>
+   
+   ## Save the score of the player to the database
+   
+   When the game starts, the score will start to increase until the child hits the shark
+   
+   
+   
+ ```
+    
+    for (let sh of Sharks) {
+       sh.move();
+       sh.show();
+        if(!BOY.hits(sh)){
+                Bscore++;}
+        if (BOY.hits(sh)) {
+      
+            Sgame.pause();
+            SgameOver.play();
+            Gover.style.display="block";
+      
+      // ------Send score to index.php and submit form ----------
+            document.getElementById("Bscore").innerHTML= Bscore ;
+            document.getElementById("p1").value = Bscore;
+            var username = document.getElementById('username').value;
+            document.getElementById("username").value = username ;
+            document.getElementById("f1").submit();
+            clearInterval(K);
+             noLoop();
+
+      }
+      text('YOUR SCORE: ' + Bscore, width - 800, height / 9);
+      BOY.show();
+      BOY.move();
+     }
+    }
+ ```
+ 
+
+<h4>
+  
+  The previous code shows that when the child hits the shark, the game will stop and the scoers will be sent to [index.php](https://github.com/rahaf-fahad/web-game/blob/main/Project438/index.php), with a submit for the form by sending the username and the scores of the game to the file [ScoreDB.php](https://github.com/rahaf-fahad/web-game/blob/main/Project438/ScoreDB.php) 
+</h4>
+
+ 
+ ```
+ // Was the score sent from javascript to index.php
+   if (isset($_POST['p1'])) {
+    $score = $_POST['p1'];
+    $username= $_POST["username"];
+ 
+    $sql = "SELECT `Scores` FROM `players` WHERE `Username` = '$username' ";
+    $result = mysqli_query($connection,$sql);
+        
+    if (mysqli_num_rows($result) == 1) {
+
+        $row = mysqli_fetch_assoc($result);
+        
+     // ---- comparison betweeen the previous score saved in the database and the new score -------
+        if ($row['Scores'] > $score) {
+          header("Location: http://localhost/Project438/score.php?username=$username&Score=$score");
+        }else{
+           
+       $sql2 = "UPDATE `players`  SET `Scores`= '$score' WHERE `Username`= '$username'";
+       
+       ......
+   
+       }
+      }
+    }
+ }
+ 
+ ```
+ ## Show the heights score of all players at the end  of each game.
+ 
+ After completing the comparison and saving the new score, the page will direct us to the score page, in which the scores of all players will be displayed in order from highest to lowest with a button to choose to play again <br>
+ 
+ 
+
+https://user-images.githubusercontent.com/52053143/167234141-2af7b30d-1377-4c6d-a68f-95264b014bab.mp4
+
