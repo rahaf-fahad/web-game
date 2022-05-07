@@ -8,6 +8,10 @@ The method of creating a new account and logging in to the player has been expla
 
 * **Show the heights score of all players at the end  of each game.** <br>
 <hr>
+<h3> If you are a new player, you must register and log in to play <h3>
+<h3> If you already have an account, log in <h3>
+   
+   ![Screenshot (287)](https://user-images.githubusercontent.com/96161183/167268802-f9845623-0078-4d56-b114-8559a816987b.png)
 
 <br><br>
 <h4>After being logged in, the game starts by pressing any button</h4>
