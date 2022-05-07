@@ -103,7 +103,7 @@ https://user-images.githubusercontent.com/52053143/167234141-2af7b30d-1377-4c6d-
 
 <br>
 
-# Code to show usernames with their score and a query from the database in the order of the score in descending order and formatted in the table with html 
+### Code to show usernames with their score and a query from the database in the order of the score in descending order and formatted in the table with html 
 
 <br>
 
