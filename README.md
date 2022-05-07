@@ -102,7 +102,9 @@ The method of creating a new account and logging in to the player has been expla
 https://user-images.githubusercontent.com/52053143/167234141-2af7b30d-1377-4c6d-a68f-95264b014bab.mp4
 
 <br>
+
 # Code to show usernames with their score and a query from the database in the order of the score in descending order and formatted in the table with html 
+
 <br>
 
  ```
