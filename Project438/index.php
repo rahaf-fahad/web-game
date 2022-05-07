@@ -23,7 +23,7 @@
         margin-left: 5px;
         
       }
-      }
+      
       #score{
     text-align: right;
     float: right;
