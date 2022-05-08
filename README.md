@@ -1,5 +1,7 @@
 # web-game
 project for course (cs346) web development
+* **about the game : We developed a game about a boy who rides the waves (surfer) and the goal of the game is to avoid obstacles (the sharks) and achieve the highest possible score by surviving as long as possible.**<br>
+ * **The way the game works , when the player is new, the first score he achieves is stored in the database and after he plays again and achieves a higher score , the previous score is replaces by the current one if it is higher  , if not The score remains the same, and so on, the highest score achieved by the players are stored in the database and displayed in the scoreboard** <br>
 * **User authentication( create a user account and then user can login the game )**<br>
 The method of creating a new account and logging in to the player has been explained here : [SignIn](https://github.com/rahaf-fahad/web-game/tree/main/SignIn) <br>
 
